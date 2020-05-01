@@ -4,7 +4,7 @@ import './App.css';
 import HomePage from './components/pages/HomePage/HomePage';
 import ShopPage from './components/pages/ShopPage/ShopPage';
 import Header from './components/Header/Header';
-
+import SignInAndSignUpPage from './components/pages/SignInAnSignUpPage/SignInAndSignUpPage';
 class App extends Component{
   render() {
     return(
@@ -13,7 +13,8 @@ class App extends Component{
         <Switch>
           <Route exact path='/' component= {HomePage} />
           <Route exact path='/shop' component= {ShopPage} />
-          
+          <Route exact path='/signin' component= {SignInAndSignUpPage} />
+
         </Switch>
       </div>
     )

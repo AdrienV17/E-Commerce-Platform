@@ -14,7 +14,18 @@
     font-weight: bolder;
     border: none;
     cursor: pointer;
-  
+
+    &.google-sign {
+      background-color: #4265f4;
+      color: white;
+      margin-left:15px;
+
+      &:hover{
+        background-color: #357ae8;
+        border:none;
+      }
+    }
+
     &:hover {
       background-color: white;
       color: black;

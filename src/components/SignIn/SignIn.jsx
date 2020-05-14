@@ -3,7 +3,7 @@ import './SignIn.scss';
 
 import CustomButton from '../CustomButton/CustomButton';
 import FormInput from '../FormInput/FormInput';
-import { signInWithGoogle } from '../../firebase/firebase.utils'; 
+import { signInWithGoogle, auth } from '../../firebase/firebase.utils'; 
 
 class SignIn extends Component{
     constructor(props){
@@ -15,18 +15,28 @@ class SignIn extends Component{
         }
     }
 
-    handleSubmit = event =>{
+    handleSubmit =async event =>{
         event.preventDefault();
 
-        this.setState({ email:'', password:'' })
+        const { email, password } = this.state;
+
+        try{
+            await auth.signInWithEmailAndPassword(email,password);
+
+            this.setState({ email:'', password:'' })
+        }catch(error){
+            console.log(error);
+        }
     }
 
     handleChange = event =>{
-        const {value,name} = event
+        const {value,name} = event.target;
 
         this.setState({ [name]: value })
     }
     render(){
+
+        const { email, password } = this.state
         return(
             <div className="signin">
                 <h2>I already have an account</h2>
@@ -34,18 +44,18 @@ class SignIn extends Component{
                 <form onSubmit={this.handleSubmit} action="">
                     <FormInput 
                         type="email" 
-                        name='Email' 
-                        value={this.state.email} 
+                        name='email' 
+                        value={email} 
                         handleChange = {this.handleChange}
-                        label='email'
+                        label='Email'
                         required
                     />
                     <FormInput 
                         type="password"
                         name='password' 
-                        value={this.state.email} 
+                        value={password} 
                         handleChange = {this.handleChange}
-                        label='password'
+                        label='Password'
                         required
                     />
                     <CustomButton type="submit">Sign In</CustomButton>

@@ -4,15 +4,14 @@ import 'firebase/auth';
 
 
 const config = {
-    apiKey: "AIzaSyCBaLuo0o71brgNScH7PyfTQQztFloO8g8",
-    authDomain: "crwn-db-c50e8.firebaseapp.com",
-    databaseURL: "https://crwn-db-c50e8.firebaseio.com",
-    projectId: "crwn-db-c50e8",
-    storageBucket: "crwn-db-c50e8.appspot.com",
-    messagingSenderId: "288924645404",
-    appId: "1:288924645404:web:5b34606d7eac199b1387d9",
-    measurementId: "G-61CVW6Q1DX"
-}
+    apiKey: "AIzaSyA29KPDeqzbXHLDsPAPng5UnMYsuOUWxl0",
+    authDomain: "crown-db-2986d.firebaseapp.com",
+    databaseURL: "https://crown-db-2986d.firebaseio.com",
+    projectId: "crown-db-2986d",
+    storageBucket: "crown-db-2986d.appspot.com",
+    messagingSenderId: "809399306758",
+    appId: "1:809399306758:web:15db4363cb8af60f741187"
+  };
 
 export const createUserProfileDocument = async(userAuth, additionalData ) =>{
     
